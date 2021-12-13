@@ -16,7 +16,7 @@ class CreateVariantsTable extends Migration
         Schema::create('variants', function (Blueprint $table) {
             $table->id();
             $table->unsignedInteger('external_id');
-            $table->unsignedInteger('product_id');
+            $table->foreignId('product_id')->constrained('products');
             $table->timestamps();
         });
     }
