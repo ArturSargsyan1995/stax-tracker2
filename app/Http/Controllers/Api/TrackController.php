@@ -4,15 +4,16 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Api\Product;
+use App\Models\Api\Variant;
+
 
 class TrackController extends Controller
 {
-    public function trackView($id){
-        print_r($id);
+    public function trackView(Product $id){
+        dd($id);
     }
-    public function trackClick($product_id, $variant_id){
-        print_r($product_id . '/');
-
-        print_r($variant_id);
+    public function trackClick(Product $product_id,Variant $variant_id){
+        dd($variant_id);
     }
 }

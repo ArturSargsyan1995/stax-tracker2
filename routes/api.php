@@ -16,15 +16,17 @@ use App\Http\Controllers\Api\VariantController;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+
 Route::post('product', [ProductController::class, 'index']);
 
 Route::get('product', [VariantController::class, 'index']);
 
-Route::get('track-view/{id}', [TrackController::class, 'trackView'])->where('id', '[0-9]+')->fallback();
-Route::post('track-click/{product_external_id}/{variant_id}', [TrackController::class, 'trackClick'])->where([
+Route::get('/track-view/{product:external_id}', [TrackController::class, 'trackView'])->where('id', '[0-9]+');
+Route::get('track-click/{product:product_external_id}/{variant:variant_id}', [TrackController::class, 'trackClick'])->where([
     'product_external_id' => '[0-9]+',
     'variant_id' => '[0-9]+',
 ]);
+
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
