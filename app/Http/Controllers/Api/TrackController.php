@@ -10,10 +10,10 @@ use App\Models\Api\Variant;
 
 class TrackController extends Controller
 {
-    public function trackView(Product $id){
-        dd($id);
+    public function trackView(Product $product){
+        dd($product);
     }
-    public function trackClick(Product $product_id,Variant $variant_id){
-        dd($variant_id);
+    public function trackClick(Product $product, Variant $variant){
+        dd($product);
     }
 }

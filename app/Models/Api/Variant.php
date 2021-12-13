@@ -9,5 +9,5 @@ class Variant extends Model
 {
     use HasFactory;
     protected $table = 'variants';
-    protected $fillable = ['external_id', 'product_id'];
+//    protected $fillable = ['external_id', 'product_id'];
 }
